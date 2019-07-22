@@ -1,0 +1,2 @@
+# stamen-qgis
+QGIS plugins
