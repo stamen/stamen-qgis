@@ -122,3 +122,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# pb_tool-generated artifacts
+stamen.zip
+scripts/compile-strings.sh
