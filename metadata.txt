@@ -1,0 +1,51 @@
+# This file contains metadata for your plugin.
+
+# This file should be included when you package your plugin.# Mandatory items:
+
+[general]
+name=Stamen
+qgisMinimumVersion=3.0
+description=A collection of processing algorithms and other GIS/data visualization tools
+version=0.1
+author=Stamen Design LLC
+email=ersin@stamen.com
+
+about=This plugin provides an assortment of processing algorithms and other tools used for GIS and data visualization purposes. The pacakge is maintained by Stamen Design, a San Francisco-based data visualization studio. We use these tools internally to create beautiful and informative maps, and we invite feature requests and contributions through our GitHub repository (https://github.com/stamen/stamen-qgis).
+
+  Processors:
+
+    - Create hulls from points (improved concave/convex hulls)
+
+tracker=https://github.com/stamen/stamen-qgis/issues
+repository=https://github.com/stamen/stamen-qgis
+# End of mandatory metadata
+
+# Recommended items:
+
+hasProcessingProvider=yes
+# Uncomment the following line and add your changelog:
+changelog=0.1 - 2019-07-21
+
+  Added:
+
+  - "Create hulls from points" algorithm
+
+# Tags are comma separated with spaces allowed
+tags=analysis, geometry, python, vector, shapefile, raster
+
+homepage=https://stamen.com
+icon=icon.png
+# experimental flag
+experimental=False
+
+# deprecated flag (applies to the whole plugin, not just a single version)
+deprecated=False
+
+# Since QGIS 3.8, a comma separated list of plugins to be installed
+# (or upgraded) can be specified.
+# Check the documentation for more information.
+# plugin_dependencies=
+
+# If the plugin can run on QGIS Server.
+server=False
+
