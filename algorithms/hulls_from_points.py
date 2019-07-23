@@ -176,10 +176,22 @@ class HullsFromPoints(QgsProcessingAlgorithm):
             # alpha = 0 means that no triangles will be included in the hull
             triangle_vertices = [list(tri_poly.vertices()) for tri_poly in tri_polys.parts()]
             circumscribed_radii = [QgsTriangle(*vertices[0:-1]).circumscribedRadius() for vertices in triangle_vertices]
-            max_circumscribed_radius = max(circumscribed_radii)
-            sorted_radii = circumscribed_radii.copy()
-            sorted_radii.sort()
-            expanded_alpha = sorted_radii[round(alpha * len(sorted_radii))]
+            if len(circumscribed_radii) > 0:
+                sorted_radii = circumscribed_radii.copy()
+                sorted_radii.sort()
+                expanded_alpha = sorted_radii[
+                    max(
+                        min(
+                            round(
+                                alpha * len(sorted_radii)
+                            ),
+                            len(sorted_radii) - 1
+                        ),
+                        0
+                    )
+                ]
+            else:
+                expanded_alpha = 0
 
             for i, vertices in enumerate(triangle_vertices):
                 if circumscribed_radii[i] <= expanded_alpha:
