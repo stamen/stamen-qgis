@@ -144,6 +144,8 @@ class HullsFromPoints(QgsProcessingAlgorithm):
         for f in source.getFeatures():
             if key_field_name:
                 group_key = f.attribute(key_field_name)
+                if group_key == None or group_key == 'NULL':
+                    continue
             else:
                 group_key = None
             points_groups.setdefault(group_key, [])
