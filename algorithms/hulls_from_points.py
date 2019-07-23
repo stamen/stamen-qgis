@@ -158,7 +158,7 @@ class HullsFromPoints(QgsProcessingAlgorithm):
         # Use these triangulations to generate triangle polygons that will form the
         # α-shapes.
         if key_field_name:
-            feedback.pushConsoleInfo(f'Creating Delaunay triangulations, keyed by f{key_field_name}...')
+            feedback.pushConsoleInfo(f'Creating Delaunay triangulations, keyed by {key_field_name}...')
         else:
             feedback.pushConsoleInfo('Creating Delaunay triangulation...')
         for group_key, points_group in points_groups.items():
